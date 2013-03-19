@@ -1,0 +1,9 @@
+{
+	"ipsum": "test word 1",
+	"varius": "test word 2",
+	"maecenas": "test word 3",
+	"ante": "test word 4",
+	"vitae": "test word 5",
+	"placerat mollis": "test multi word",
+	"cura*": "test wildcard"
+}
