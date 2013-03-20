@@ -4,21 +4,12 @@
 	var words, replaceWords, findWords, findWordNodes, filterNodeTypes, preparedWords, prepareWords, wordTree, replaceWord, createNode, opts;
 
 	opts = {
-		// The element to use around definitions.
-		'defEl': 'abbr',
-
-		// The attribute name to use for the word's key. Empty string to omit.
-		'attrKey': 'data-definition',
-
-		// The attribute name ot use for the word's definition. Empty string to omit.
-		'attrDef': 'title',
-
-		// A class to attach to your definition elements. Empty string to omit.
-		'class': 'definition',
-
-		// Whether or not to include the word itself in the definition attr, format 'word: definition'
-		'includeWord': 'true'
-	}
+		'defEl': 'abbr',              // The element to use around definitions.
+		'attrKey': 'data-definition', // The attribute name to use for the word's key. Empty string to omit.
+		'attrDef': 'title',           // The attribute name to use for the word's definition. Empty string to omit.
+		'class': 'definition',        // A class to attach to your definition elements. Empty string to omit.
+		'includeWord': 'true'         // Whether or not to include the word itself in the definition attr, format 'word: definition'
+	};
 
 	$.fn.autoabbr = function(options) {
 		var el = this;
