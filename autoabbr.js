@@ -1,14 +1,15 @@
 (function($) {
 	"use strict";
 
-	var words, replaceWords, findWords, findWordNodes, filterNodeTypes, preparedWords, prepareWords, wordTree, replaceWord, createNode, opts;
+	var words, replaceWords, runPlugin, findWords, findWordNodes, filterNodeTypes, preparedWords, prepareWords, wordTree, replaceWord, createNode, opts;
 
 	opts = {
 		'defEl': 'abbr',              // The element to use around definitions.
 		'attrKey': 'data-definition', // The attribute name to use for the word's key. Empty string to omit.
 		'attrDef': 'title',           // The attribute name to use for the word's definition. Empty string to omit.
 		'class': 'definition',        // A class to attach to your definition elements. Empty string to omit.
-		'includeWord': 'true'         // Whether or not to include the word itself in the definition attr, format 'word: definition'
+		'includeWord': 'true',        // Whether or not to include the word itself in the definition attr, format 'word: definition'
+		'onComplete': null            // A function to run once glossary tags have been added
 	};
 
 	$.fn.autoabbr = function(options) {
@@ -25,14 +26,21 @@
 		if (opts.src) {
 			$.get(opts.src, function(data) {
 				$.extend(words, data);
-				prepareWords();
-				findWordNodes(el);
+				runPlugin(el);
 			}, 'json');
 		} else {
-			prepareWords();
-			findWordNodes(el);
+			runPlugin(el);
 		}
 	};
+
+	// Run the plugin on the given element(s), execute callback
+	runPlugin = function(el) {
+		prepareWords();
+		findWordNodes(el);
+		if (typeof opts.onComplete === 'function') {
+			opts.onComplete.call(el);
+		}
+	}
 
 	// Convert our words into a nested alphabetical hash
 	//   Stick .word = true in the hash to mark the end of a word

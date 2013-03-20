@@ -2,12 +2,21 @@
 <script src="autoabbr.js"></script>
 <style type="text/css">
 	.definition {
-		border-bottom:1px red dashed;
+		background: #FF9;
 	}
 </style>
 <script>
-$(function() { 
-	$('h1, p').autoabbr({src:'words.json'});
+$(function() {
+	var start = new Date().getTime();
+
+	$('h1, p').autoabbr({
+		src: 'words.json',
+		onComplete: function() {
+			if (typeof console == 'object') {
+				console.log("Done in " + (new Date().getTime() - start) + "ms");
+			}
+		}
+	});
 });
 </script>
 <h1>Lorem ipsum dolor sit amet</h1>

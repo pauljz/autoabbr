@@ -50,4 +50,5 @@ The options parameter lets you customise things a bit.
         'attrDef': 'title',           // The attribute name to use for the word's definition. Empty string to omit.
         'class': 'definition',        // A class to attach to your definition elements. Empty string to omit.
         'includeWord': 'true'         // Whether or not to include the word itself in the definition attr, format 'word: definition'
+	'onComplete': function(){...} // A callback function to run when adding words is complete. e.g. for attaching a toolTip library
     }
