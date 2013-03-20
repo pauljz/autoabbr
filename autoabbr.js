@@ -7,7 +7,7 @@
 		'defEl': 'abbr',              // The element to use around definitions.
 		'attrKey': 'data-definition', // The attribute name to use for the word's key. Empty string to omit.
 		'attrDef': 'title',           // The attribute name to use for the word's definition. Empty string to omit.
-		'class': 'definition',        // A class to attach to your definition elements. Empty string to omit.
+		'addClass': 'definition',     // A class to attach to your definition elements. Empty string to omit.
 		'includeWord': 'true',        // Whether or not to include the word itself in the definition attr, format 'word: definition'
 		'onComplete': null            // A function to run once glossary tags have been added
 	};
@@ -189,8 +189,8 @@
 				node.setAttribute(opts.attrKey, chunk.word);
 			}
 
-			if (opts.class) {
-				node.className = opts.class;
+			if (opts.addClass) {
+				node.className = opts.addClass;
 			}
 		} else {
 			node = document.createTextNode(chunk.text);
