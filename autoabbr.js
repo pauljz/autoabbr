@@ -4,7 +4,7 @@
 	var words, replaceWords, runPlugin, findWords, findWordNodes, filterNodeTypes, preparedWords, prepareWords, wordTree, replaceWord, createNode, opts;
 
 	opts = {
-		'defEl': 'abbr',              // The element to use around definitions.
+		'defTag': 'abbr',             // The element to use around definitions.
 		'attrKey': 'data-definition', // The attribute name to use for the word's key. Empty string to omit.
 		'attrDef': 'title',           // The attribute name to use for the word's definition. Empty string to omit.
 		'addClass': 'definition',     // A class to attach to your definition elements. Empty string to omit.
@@ -20,7 +20,7 @@
 		words = {};
 
 		if (opts.words) {
-	   		words = opts.words;
+			words = opts.words;
 		}
 
 		if (opts.src) {

@@ -1,8 +1,8 @@
 {
         "name": "autoabbr",
-        "version": "0.1.1",
+        "version": "0.1.2",
         "title": "AutoAbbr.js",
-	"description": "Finds words on a page, and wraps them in abbr tags, with a description specified by a JSON file or simple hash. Useful for creating automatic tooltips for glossary definitions.",
+        "description": "Finds words on a page, and wraps them in abbr tags, with a description specified by a JSON file or simple hash. Useful for creating automatic tooltips for glossary definitions.",
         "author": {
                 "name": "Paul Zumbrun",
                 "url": "https://github.com/pauljz"

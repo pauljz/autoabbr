@@ -10,23 +10,23 @@ The intended usage is for inserting glossary definitions inline into a page pure
 
 Install it like you would any jQuery plugin by including it after jQuery:
 
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="autoabbr.js"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="autoabbr.js"></script>
 
 ## Basic Usage
 
 The most basic usage is just to run this on your paragraph tags and to supply a word file.
 
-    $('p').autoabbr({ src: 'words.json' });
+	$('p').autoabbr({ src: 'words.json' });
     
 The words file should just be a simple hash of `{ word1: definition1, word2: definition2 }`
     
 You can also supply your words directly inline:
 
-    $('p').autoabbr({ words: {
-        "lorem": "word 1",
-        "ipsum": "word 2"
-    }});
+	$('p').autoabbr({ words: {
+		"lorem": "word 1",
+		"ipsum": "word 2"
+	}});
     
 You could also supply both `words` and `src`, in which case the words loaded from the file will append/overwrite
 the words supplied inline.
@@ -44,11 +44,11 @@ e.g. "lor*" in the word file would match "lor" or "lorem" in the text.
 
 The options parameter lets you customise things a bit.
 
-    {
-        'defEl': 'abbr',              // The element to use around definitions.
-        'attrKey': 'data-definition', // The attribute name to use for the word's key. Empty string to omit.
-        'attrDef': 'title',           // The attribute name to use for the word's definition. Empty string to omit.
-        'addClass': 'definition',     // A class to attach to your definition elements. Empty string to omit.
-        'includeWord': 'true'         // Whether or not to include the word itself in the definition attr, format 'word: definition'
-	'onComplete': function(){...} // A callback function to run when adding words is complete. e.g. for attaching a toolTip library
-    }
+	{
+		'defTag': 'abbr',             // The element to use around definitions.
+		'attrKey': 'data-definition', // The attribute name to use for the word's key. Empty string to omit.
+		'attrDef': 'title',           // The attribute name to use for the word's definition. Empty string to omit.
+		'addClass': 'definition',     // A class to attach to your definition elements. Empty string to omit.
+		'includeWord': 'true'         // Whether or not to include the word itself in the definition attr, format 'word: definition'
+		'onComplete': function(){...} // A callback function to run when adding words is complete. e.g. for attaching a toolTip library
+	}
