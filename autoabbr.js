@@ -1,7 +1,7 @@
 (function($) {
 	"use strict";
 
-	var words, replaceWords, runPlugin, findWords, findWordNodes, filterNodeTypes, preparedWords, prepareWords, wordTree, replaceWord, createNode, opts;
+	var words, replaceWords, runPlugin, findWords, findWordNodes, preparedWords, prepareWords, wordTree, createNode, opts;
 
 	opts = {
 		'defTag': 'abbr',             // The element to use around definitions.

@@ -1,6 +1,6 @@
 {
         "name": "autoabbr",
-        "version": "0.1.2",
+        "version": "0.1.3",
         "title": "AutoAbbr.js",
         "description": "Finds words on a page, and wraps them in abbr tags, with a description specified by a JSON file or simple hash. Useful for creating automatic tooltips for glossary definitions.",
         "author": {
