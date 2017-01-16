@@ -132,7 +132,7 @@
 	// Divide out the text for this text Node into chunks, based on found words,
 	//   and re-assemble with definition DOM elements in place
 	replaceWords = function(el, foundWords) {
-		var foundWord, parentNode, node, i, l;
+		var foundWord, parentNode, nextNode, node, i, l;
 		var chunks = [];
 		var last = 0;
 		var text = el.nodeValue;
@@ -156,11 +156,13 @@
 		});
 
 		parentNode = el.parentNode;
+		nextNode = el.nextSibling;
+		
 		parentNode.removeChild(el);
 		for (i=0, l=chunks.length; i<l; i++) {
 			node = createNode(chunks[i]);
 			if (node !== null) {
-				parentNode.appendChild(node);
+				parentNode.insertBefore(node, nextNode);
 			}
 		}
 	}
